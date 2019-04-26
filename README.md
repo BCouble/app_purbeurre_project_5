@@ -1,6 +1,14 @@
 # app_purbeurre_project_5
 
-## 1 Création de la base et du script SQL pour MySQL
+## 1 création du reposytori : 
+
+https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
+
+## 2 création du trello : 
+
+![Trello off](https://github.com/BCouble/app_purbeurre_project_5/blob/master/image/trello_off.PNG) 
+
+## 3 Création de la base de donnee et du script SQL pour MySQL
 
 Creation of the database :
 - in the console connect to mysql and type the command :
@@ -27,4 +35,4 @@ ERROR 1215 (HY000): Cannot add foreign key constraint
 
 The columns did not have any UNSIGNED which caused an error in the creation of foreign keys (Resolved)
 
-## 2 Création d'une classe en python pour rechercher dans la base Open Food Fact (OFF)
+## 4 Création d'une classe en python pour rechercher dans la base Open Food Fact (OFF)

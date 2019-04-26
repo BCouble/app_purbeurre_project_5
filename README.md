@@ -1,6 +1,6 @@
 # app_purbeurre_project_5
 
-## 1 création du reposytori : 
+## 1 création du Repositories : 
 
 https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
@@ -10,7 +10,7 @@ https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
 ## 3 Création de la base de donnee et du script SQL pour MySQL
 
-Creation of the database :
+### Creation of the database :
 - in the console connect to mysql and type the command :
 	
 	mysql -h localhost -u root -p
@@ -24,7 +24,7 @@ Creation of the database :
 	mysql -h localhost -u purb -p
 	"taper le mot de passe"
 
-Creating Food, Category, and Substitute Tables :
+### Creating Food, Category, and Substitute Tables :
 
 	USE purbeurre
 	SOURCE "sql\tables_creation.sql";
@@ -36,3 +36,7 @@ ERROR 1215 (HY000): Cannot add foreign key constraint
 The columns did not have any UNSIGNED which caused an error in the creation of foreign keys (Resolved)
 
 ## 4 Création d'une classe en python pour rechercher dans la base Open Food Fact (OFF)
+
+### Etude du fonctionnement de l'API
+
+- Avec l'url : 

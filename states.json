@@ -1,0 +1,176 @@
+[
+    {
+        "id": "en:product-name-completed",
+        "products": 780866,
+        "name": "Product name completed",
+        "url": "https://world.openfoodfacts.org/state/product-name-completed"
+    },
+    {
+        "id": "en:packaging-code-to-be-completed",
+        "products": 749006,
+        "name": "Packaging code to be completed",
+        "url": "https://world.openfoodfacts.org/state/packaging-code-to-be-completed"
+    },
+    {
+        "id": "en:expiration-date-to-be-completed",
+        "url": "https://world.openfoodfacts.org/state/expiration-date-to-be-completed",
+        "name": "Expiration date to be completed",
+        "products": 748095
+    },
+    {
+        "id": "en:to-be-completed",
+        "products": 722125,
+        "url": "https://world.openfoodfacts.org/state/to-be-completed",
+        "name": "To be completed"
+    },
+    {
+        "url": "https://world.openfoodfacts.org/state/nutrition-facts-completed",
+        "name": "Nutrition facts completed",
+        "products": 695810,
+        "id": "en:nutrition-facts-completed"
+    },
+    {
+        "id": "en:characteristics-to-be-completed",
+        "name": "Characteristics to be completed",
+        "url": "https://world.openfoodfacts.org/state/characteristics-to-be-completed",
+        "products": 688168
+    },
+    {
+        "products": 666172,
+        "name": "Packaging to be completed",
+        "url": "https://world.openfoodfacts.org/state/packaging-to-be-completed",
+        "id": "en:packaging-to-be-completed"
+    },
+    {
+        "id": "en:photos-uploaded",
+        "products": 620346,
+        "url": "https://world.openfoodfacts.org/state/photos-uploaded",
+        "name": "Photos uploaded"
+    },
+    {
+        "id": "en:quantity-to-be-completed",
+        "name": "Quantity to be completed",
+        "url": "https://world.openfoodfacts.org/state/quantity-to-be-completed",
+        "products": 577872
+    },
+    {
+        "id": "en:categories-to-be-completed",
+        "products": 567123,
+        "name": "Categories to be completed",
+        "url": "https://world.openfoodfacts.org/state/categories-to-be-completed"
+    },
+    {
+        "products": 519458,
+        "url": "https://world.openfoodfacts.org/state/brands-completed",
+        "name": "Brands completed",
+        "id": "en:brands-completed"
+    },
+    {
+        "products": 431871,
+        "name": "Photos to be validated",
+        "url": "https://world.openfoodfacts.org/state/photos-to-be-validated",
+        "id": "en:photos-to-be-validated"
+    },
+    {
+        "id": "en:ingredients-to-be-completed",
+        "url": "https://world.openfoodfacts.org/state/ingredients-to-be-completed",
+        "name": "Ingredients to be completed",
+        "products": 416662
+    },
+    {
+        "id": "en:ingredients-completed",
+        "name": "Ingredients completed",
+        "url": "https://world.openfoodfacts.org/state/ingredients-completed",
+        "products": 412671
+    },
+    {
+        "id": "en:brands-to-be-completed",
+        "name": "Brands to be completed",
+        "url": "https://world.openfoodfacts.org/state/brands-to-be-completed",
+        "products": 309871
+    },
+    {
+        "id": "en:categories-completed",
+        "products": 262207,
+        "url": "https://world.openfoodfacts.org/state/categories-completed",
+        "name": "Categories completed"
+    },
+    {
+        "id": "en:quantity-completed",
+        "url": "https://world.openfoodfacts.org/state/quantity-completed",
+        "name": "Quantity completed",
+        "products": 251458
+    },
+    {
+        "products": 208987,
+        "name": "Photos to be uploaded",
+        "url": "https://world.openfoodfacts.org/state/photos-to-be-uploaded",
+        "id": "en:photos-to-be-uploaded"
+    },
+    {
+        "id": "en:photos-validated",
+        "products": 188475,
+        "url": "https://world.openfoodfacts.org/state/photos-validated",
+        "name": "Photos validated"
+    },
+    {
+        "id": "en:packaging-completed",
+        "url": "https://world.openfoodfacts.org/state/packaging-completed",
+        "name": "Packaging completed",
+        "products": 163158
+    },
+    {
+        "id": "en:characteristics-completed",
+        "products": 141165,
+        "url": "https://world.openfoodfacts.org/state/characteristics-completed",
+        "name": "Characteristics completed"
+    },
+    {
+        "id": "en:nutrition-facts-to-be-completed",
+        "url": "https://world.openfoodfacts.org/state/nutrition-facts-to-be-completed",
+        "name": "Nutrition facts to be completed",
+        "products": 133523
+    },
+    {
+        "id": "en:complete",
+        "products": 107208,
+        "name": "Complete",
+        "url": "https://world.openfoodfacts.org/state/complete"
+    },
+    {
+        "products": 105577,
+        "name": "To be checked",
+        "url": "https://world.openfoodfacts.org/state/to-be-checked",
+        "id": "en:to-be-checked"
+    },
+    {
+        "id": "en:expiration-date-completed",
+        "name": "Expiration date completed",
+        "url": "https://world.openfoodfacts.org/state/expiration-date-completed",
+        "products": 81238
+    },
+    {
+        "id": "en:product-name-to-be-completed",
+        "name": "Product name to be completed",
+        "url": "https://world.openfoodfacts.org/state/product-name-to-be-completed",
+        "products": 48463
+    },
+    {
+        "id": "en:packaging-code-completed",
+        "products": 46920,
+        "name": "Packaging code completed",
+        "url": "https://world.openfoodfacts.org/state/packaging-code-completed"
+    },
+    {
+        "id": "en:empty",
+        "products": 18102,
+        "url": "https://world.openfoodfacts.org/state/empty",
+        "name": "Empty"
+    },
+    {
+        "name": "Checked",
+        "url": "https://world.openfoodfacts.org/state/checked",
+        "products": 1631,
+        "id": "en:checked"
+    }
+]

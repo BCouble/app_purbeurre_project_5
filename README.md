@@ -4,14 +4,14 @@
 
 Creation of the database :
 - in the console connect to mysql and type the command :
-
-    mysql -h localhost -u root -p
+	
+	mysql -h localhost -u root -p
 	CREATE DATABASE purbeurre CHARACTER SET 'utf8';
 	CREATE USER 'purb'@'localhost' IDENTIFIED BY 'purb456!';
 	GRANT ALL PRIVILEGES ON purbeurre.* TO 'purb'@'localhost';
 	EXIT;
 
-- se connecter à la bdd avec l'utilisateur "purb" :
+- connect to the database with the user "purb":
 	
 	mysql -h localhost -u purb -p
 	"taper le mot de passe"
@@ -19,12 +19,12 @@ Creation of the database :
 Creating Food, Category, and Substitute Tables :
 
 	USE purbeurre
-	SOURCE "link_file\file.sql";
+	SOURCE "sql\tables_creation.sql";
 
-Problématique :
+Problematic:
 
 ERROR 1215 (HY000): Cannot add foreign key constraint
 
-Les colonnes n'avait pas toutes UNSIGNED ce qui provoquait une erreur dans la création des clé étrangères (Résolue)
+The columns did not have any UNSIGNED which caused an error in the creation of foreign keys (Resolved)
 
 ## 2 Création d'une classe en python pour rechercher dans la base Open Food Fact (OFF)

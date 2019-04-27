@@ -1,6 +1,7 @@
 import openfoodfacts
+from constant import *
 import json
-
+import requests
 """categories = openfoodfacts.facets.get_categories('france')
 id_cat = categories[0]["id"]
 print(id_cat)
@@ -29,11 +30,45 @@ with open('entry_dates.json', 'w') as f:
     f.write(json.dumps(entry_dates, indent=4))"""
 
 #products = openfoodfacts.products.get_by_facets({'trace': 'egg', 'country': 'france', 'state': 'complete', 'place': 'Paris', 'entry_date': '2019'})
-products = openfoodfacts.products.get_by_country("France", 2)
+"""products = openfoodfacts.products.get_by_country("France", 2)
 products2 = openfoodfacts.products.get_by_facets({'category': 'Boissons', 'country': 'france'})
-
-with open('france_2.json', 'w') as f: 
-    f.write(json.dumps(products, indent=4))
+products3 = openfoodfacts.products.get_by_facets({'country': 'france'})
+with open('test2.json', 'w') as f: 
+    f.write(json.dumps(products, indent=4))"""
 
 #products = openfoodfacts.products.get_by_country("France", 2)
 #print(products)
+"""food = 0
+while food < 20:
+            products = openfoodfacts.products.get_by_facets({'category': 'Boissons', 'country': 'france'})
+            for product in products :
+                print(products[food]['product_name'])
+                print(products[food]['categories'])
+                print(products[food]['countries'])
+                food += 1"""
+
+
+"""search_result = openfoodfacts.products.advanced_search({
+  "search_terms":"*",
+  "countries":"france",
+  "page":"2",
+  "page_size":"1000"
+})"""
+
+""" TEST CATEGORIE """
+categories = []
+i = 0
+select_cat = requests.get(BASE_URL+CATEGORY).json()
+#data_tags = select_cat.get('tags')
+
+while i < NB_CAT:
+    categories.append(select_cat['tags'][i]['name'])
+    i += 1
+
+print(categories)
+
+""" TEST FOOD """
+foods = []
+search = requests.get(BASE_URL+CGI+FOOD).json()
+with open('search.json', 'w') as f: 
+    f.write(json.dumps(search, indent=4))"""

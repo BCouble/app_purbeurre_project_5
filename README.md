@@ -1,5 +1,7 @@
 # app_purbeurre_project_5
 
+install connect mysql : pip install mysql-connector-python
+
 ## 1 création du Repositories : 
 
 https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
@@ -39,4 +41,5 @@ The columns did not have any UNSIGNED which caused an error in the creation of f
 
 ### Etude du fonctionnement de l'API
 
-- Avec l'url : 
+- Avec l'url : https://fr.openfoodfacts.org/api/v0/cgi/search.pl exemple fichier off.py
+- ou avec : import openfoodfacts exemple fichier pb.py

@@ -20,3 +20,15 @@ champ_label.pack()
 
 # On démarre la boucle Tkinter qui s'interompt quand on ferme la fenêtre
 fenetre.mainloop()
+
+
+
+
+food = 0
+while food < 20:
+            products = openfoodfacts.products.get_by_facets({'category': 'Boissons', 'country': 'france'})
+            for food in products :
+                print(products[food]['product_name'])
+                print(products[food]['categories'])
+                print(products[food]['countries'])
+                food += 1

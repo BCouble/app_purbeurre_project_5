@@ -51,13 +51,10 @@ class Create_food:
 
     def insert_food(self, food):
         """ insert food in mysql """
-        data = (
-        food["name"], food["description"], food["id_categorie"], food["shops"], food["date_save"], food["url_page_off"],
-        food["nutriscore"])
         query = ("INSERT INTO food (name, description, id_categorie, shops, date_save, url_page_off, nutriscore)"
-                 "VALUES (%s, %s, %s, %s, %s, %s, %s)")
+                 "VALUES (%(name)s, %(description)s, %(id_categorie)s, %(shops)s, %(date_save)s, %(url_page_off)s, %(nutriscore)s)")
         self.cursor = self.db.cursor()
-        self.cursor.execute(query, data)
+        self.cursor.execute(query, food)
         self.db.commit()
         self.cursor.close()
 

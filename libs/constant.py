@@ -10,7 +10,7 @@ DATABASE = "purbeurre"
 GEOLOC = "fr"
 BASE_URL = "https://"+GEOLOC+".openfoodfacts.org/"
 CGI = "cgi/search.pl?"
-FOOD = "page_size=50&search_simple=1&action=process&page=2&json=1"
+FOOD = "page_size=100&search_simple=1&action=process&page=2&json=1"
 CATEGORY = "categories.json"
 
 """ CONFIG CATEGORIE """
@@ -19,4 +19,4 @@ NB_CAT = 10
 
 """ CONFIG FOOD """
 
-NB_FOOD = 1000
+NB_FOOD = 100

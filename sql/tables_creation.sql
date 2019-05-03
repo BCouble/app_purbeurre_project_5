@@ -36,6 +36,3 @@ ADD CONSTRAINT fk_categorie_id FOREIGN KEY (id_categorie) REFERENCES categorie(i
 
 ALTER TABLE food
 ADD CONSTRAINT fk_substitutes_id FOREIGN KEY (id_substitutes) REFERENCES substitutes(id);
-
--- ALTER TABLE substitutes
--- ADD CONSTRAINT fk_food_id FOREIGN KEY (id_food) REFERENCES food(id);

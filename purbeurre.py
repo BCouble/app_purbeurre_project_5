@@ -5,9 +5,16 @@ from libs.create_food import Create_food
 #cat.create_cat()
 #cat.insert_cat()
 
+#food = Create_food()
+#food.select_cat()
+#food.create_food()
+#food.check_value()
 
-food = Create_food()
-food.select_cat()
-food.create_food()
-#food.insert_food()
-food.check_value()
+Select cat
+    select food
+        choix sub
+        enregistrement sub
+        selectfood
+    retour cat
+
+Voir favoris

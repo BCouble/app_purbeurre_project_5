@@ -1,5 +1,4 @@
 
-import json
 import requests
 import mysql.connector
 
@@ -17,7 +16,7 @@ class Create_food:
     def select_cat(self):
         """ select cat in bdd purbeurre """
         self.cursor = self.db.cursor(buffered=True)
-        query = ("SELECT * FROM categorie")
+        query = "SELECT * FROM categorie"
         self.cursor.execute(query)
         rows = self.cursor.fetchall()
         self.db.commit()
@@ -44,7 +43,7 @@ class Create_food:
                         food["url_page_off"] = search['products'][i]['url']
                         food["nutriscore"] = search['products'][i]['nutrition_grade_fr']
                     except (KeyError, TypeError):
-                        pass
+                        continue
                     foods.append(food)
                 i += 1
             self.foods = foods

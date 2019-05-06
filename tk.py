@@ -1,34 +1,58 @@
-"""Premier exemple avec Tkinter.
-
-On crée une fenêtre simple qui souhaite la bienvenue à l'utilisateur.
-
+#! /usr/bin/env python3
+# coding: utf-8
 """
+Project 5
+App Pur beurre
+"""
+from tkinter import Tk
 
-# On importe Tkinter
-from tkinter import *
-
-# On crée une fenêtre, racine de notre interface
-fenetre = Tk()
-
-# On crée un label (ligne de texte) souhaitant la bienvenue
-# Note : le premier paramètre passé au constructeur de Label est notre
-# interface racine
-champ_label = Label(fenetre, text="Salut les Zér0s !")
-
-# On affiche le label dans la fenêtre
-champ_label.pack()
-
-# On démarre la boucle Tkinter qui s'interompt quand on ferme la fenêtre
-fenetre.mainloop()
+from libs.interface import Interface
+from libs.select_data import Select_data
 
 
+def display_category():
+    """ display category """
+    cat = Select_data()
+    cat.select_cat()
+    cat.display_cat()
+
+def display_food_for_cat(cat):
+    """ display food """
+    food = Select_data()
+    food.select_food_for_cat(cat)
+    food.display_food_for_cat()
+
+def window_tk():
+    """ config window """
+    window = Tk()
+    interface = Interface(window)
+
+    interface.mainloop()
+    interface.destroy()
 
 
-food = 0
-while food < 20:
-            products = openfoodfacts.products.get_by_facets({'category': 'Boissons', 'country': 'france'})
-            for food in products :
-                print(products[food]['product_name'])
-                print(products[food]['categories'])
-                print(products[food]['countries'])
-                food += 1
+def choice_category():
+    chiffre = input("Choisissez un chiffre : ")
+    chiffre = int(chiffre)
+
+    return chiffre
+
+def main():
+    """ running app """
+    nav_app = True
+    cat = 0
+    while nav_app:
+        if cat == 0:
+            print("Veuillez choisir une catégorie : ")
+            display_category()
+            cat = choice_category()
+        if 1 <= cat <= 10:
+            print("Quel ingredient voulez-vous substituer ?")
+            display_food_for_cat(cat)
+            cat = choice_category()
+
+
+
+
+if __name__ == "__main__":
+    main()

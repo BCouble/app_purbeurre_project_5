@@ -21,7 +21,6 @@ class Create_category:
         while i < NB_CAT:
             categories.append(select_cat['tags'][i]['name'])
             i += 1
-        print("la liste des catégories à été crée")
 
         self.categories = categories
 
@@ -33,4 +32,3 @@ class Create_category:
             self.cursor.execute(query)
             self.db.commit()
         self.cursor.close()
-        print("la liste des catégories à été importée")

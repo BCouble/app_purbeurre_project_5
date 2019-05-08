@@ -4,9 +4,7 @@
 Project 5
 App Pur beurre
 """
-from tkinter import Tk
 
-from libs.interface import Interface
 from libs.select_data import Select_data
 
 
@@ -21,15 +19,6 @@ def display_food_for_cat(cat):
     food = Select_data()
     food.select_food_for_cat(cat)
     food.display_food_for_cat()
-
-def window_tk():
-    """ config window """
-    window = Tk()
-    interface = Interface(window)
-
-    interface.mainloop()
-    interface.destroy()
-
 
 def choice_category():
     chiffre = input("Choisissez un chiffre : ")

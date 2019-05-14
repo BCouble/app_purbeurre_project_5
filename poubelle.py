@@ -38,3 +38,25 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+    def choice_number(self):
+        global choice_num
+        choice = 0
+        while choice == 0:
+            choice_num = input("Choisissez un chiffre entre (1 & 10) ou 11 pour quitter: ")
+            try:
+                choice_num = int(choice_num)
+                if 1 <= choice_num <= 10:
+                    print("Produits de la catégorie")
+                    break
+                else:
+                    print("Un nombre entre 1 & 11")
+                    break
+            except ValueError:
+                print("Un nombre entre 1 & 11")
+                break
+
+        self.choice_num = choice_num

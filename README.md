@@ -44,3 +44,8 @@ The columns did not have any UNSIGNED which caused an error in the creation of f
 - Avec l'url : https://fr.openfoodfacts.org/api/v0/cgi/search.pl exemple fichier off.py
 - ou avec : import openfoodfacts exemple fichier pb.py
 - Critère de recherche définit dans le fichier constant.py
+
+
+pip install -r requirements.txt 
+python -m pip install flask
+

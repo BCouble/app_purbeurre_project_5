@@ -9,11 +9,16 @@ class Connect_bdd:
         self.cursor = self.db.cursor(buffered=True)
         self.result = []
 
-    def execute_mysql(self, query):
-        """ mysql req """
+    def execute_mysql_sel(self, query):
+        """ mysql select """
         self.cursor.execute(query)
         self.result = self.cursor.fetchall()
         return self.result
+
+    def execute_mysql_ins(self, query):
+        """ mysql insert """
+        self.cursor.execute(query)
+        self.db.commit()
 
     def destroy_mysql(self):
         """ mysql destroy """

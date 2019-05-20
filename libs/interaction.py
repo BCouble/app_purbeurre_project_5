@@ -2,8 +2,10 @@ class Interaction:
     def __init__(self):
         choice_menu = ""
         choice_num = ""
+        choice_sub_f = ""
         self.choice_menu = choice_menu
         self.choice_num = choice_num
+        self.choice_sub_f = choice_sub_f
 
     def choice_bdd(self):
         global choice_menu
@@ -39,9 +41,28 @@ class Interaction:
                     break
                 else:
                     print("Un nombre entre 1 & 11")
-                    break
+
             except ValueError:
-                print("Un nombre entre 1 & 11")
+                print("Un nombre entre 1 & 11 lol")
                 break
 
         self.choice_num = choice_num
+
+    def choice_sub_food(self):
+        global choice_sub_f
+        choice = 0
+        while choice == 0:
+            choice_sub_f = input("Entrer l'id d'un produit pour sauvegarder un substitue : ")
+            try:
+                choice_sub_f = int(choice_sub_f)
+                if 1 <= choice_sub_f <= 5:
+                    print("Votre substitue est enregistré !")
+                    break
+                else:
+                    print("Un nombre entre 1 & 5")
+
+            except ValueError:
+                print("Un nombre entre 1 & 5")
+                break
+
+        self.choice_sub_f = choice_sub_f

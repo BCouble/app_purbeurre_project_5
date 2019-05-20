@@ -12,7 +12,6 @@ from libs.select_data import SelectData
 class App:
     def __init__(self):
         self.go = False
-        self.db = SelectData()
         self.choice = Interaction()
         self.select_data = SelectData()
         self.ctrl = ManagementData()
@@ -26,14 +25,23 @@ class App:
             self.choice.choice_bdd()
             if self.choice.choice_menu == 0:
                 self.ctrl.category_dysplay()
-                num = self.choice.choice_number()
-                if num == 11:
-                    print("quit")
-                else:
-                    print(num)
+                self.choice.choice_number()
+                num_cat = self.choice.choice_num
+                if 1 <= num_cat <= 10:
+                    listfood = self.ctrl.display_food_for_category(num_cat)
+                    self.choice.choice_number()
+                    num_food = self.choice.choice_num
+                    if 1 <= num_food <= 10:
+                        listsubfood = self.ctrl.display_sub_food_category(num_food, listfood)
+                        self.choice.choice_sub_food()
+                        num_sub_f = self.choice.choice_sub_f
+                        if 1 <= num_sub_f <= 5:
+                            self.select_data.save_sub_food(num_food, listfood, num_sub_f, listsubfood)
+                        else:
+                            print("not save")
             else:
                 if self.choice.choice_menu == 1:
-                    print("test 1")
+                    self.ctrl.display_test()
 
     def stop_app(self):
         self.go = False

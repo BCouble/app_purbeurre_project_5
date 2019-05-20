@@ -10,8 +10,8 @@ CREATE TABLE food (
   shops VARCHAR(200) DEFAULT NULL,
   date_save DATETIME NOT NULL,
   url_page_off VARCHAR(500) DEFAULT NULL,
-  nutriscore CHAR(1) DEFAULT NULL,
-  id_substitutes SMALLINT(6) UNSIGNED NOT NULL
+  nutriscore CHAR(5) DEFAULT NULL,
+  id_substitutes SMALLINT(6) UNSIGNED DEFAULT NULL
 ) 
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -27,12 +27,10 @@ DROP TABLE IF EXISTS substitutes;
 
 CREATE TABLE substitutes (
   id SMALLINT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  etat_sub VARCHAR(30) DEFAULT NULL 
+  id_produit SMALLINT(10) DEFAULT NULL,
+  id_substitute SMALLINT(10) DEFAULT NULL
 ) 
 ENGINE=InnoDB;
 
 ALTER TABLE food
 ADD CONSTRAINT fk_categorie_id FOREIGN KEY (id_categorie) REFERENCES categorie(id);
-
-ALTER TABLE food
-ADD CONSTRAINT fk_substitutes_id FOREIGN KEY (id_substitutes) REFERENCES substitutes(id);

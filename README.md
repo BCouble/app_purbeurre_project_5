@@ -15,6 +15,7 @@ https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 ### Creation of the database :
 - in the console connect to mysql and type the command :
 	
+	
 	mysql -h localhost -u root -p
 	CREATE DATABASE purbeurre CHARACTER SET 'utf8';
 	CREATE USER 'purb'@'localhost' IDENTIFIED BY 'purb456!';
@@ -23,13 +24,15 @@ https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
 - connect to the database with the user "purb":
 	
+	
 	mysql -h localhost -u purb -p
 	"taper le mot de passe"
 
 ### Creating Food, Category, and Substitute Tables :
 
-	USE purbeurre
-	SOURCE "c:\chemin_absolut\tables_creation.sql";
+	exemple : SOURCE c:/chemin_absolut/tables.sql;
+	
+	SOURCE C:/Users/admin/Desktop/cour_python/projet_5_PurBeurre/app_purbeurre_project_5/sql/tables_creation.sql;
 
 Problematic:
 
@@ -46,6 +49,11 @@ The columns did not have any UNSIGNED which caused an error in the creation of f
 - Critère de recherche définit dans le fichier constant.py
 
 
-pip install -r requirements.txt 
-python -m pip install flask
+pour importer les données : 
+    
+    insert_data.py 
+    
+Pour lancer l'application :
+
+    pb.py
 

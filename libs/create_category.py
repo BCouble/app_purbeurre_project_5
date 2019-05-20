@@ -1,12 +1,12 @@
 
-import json
 import requests
 import mysql.connector
 
 from libs.constant import *
+from libs.connect_bdd import *
 
 
-class Create_category:
+class CreateCategory:
     """ select, import data off """
     def __init__(self):
         """ Constructor """

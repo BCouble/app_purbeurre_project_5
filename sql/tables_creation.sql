@@ -11,7 +11,6 @@ CREATE TABLE food (
   date_save DATETIME NOT NULL,
   url_page_off VARCHAR(500) DEFAULT NULL,
   nutriscore CHAR(5) DEFAULT NULL,
-  id_substitutes SMALLINT(6) UNSIGNED DEFAULT NULL
 ) 
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

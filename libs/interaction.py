@@ -41,10 +41,10 @@ class Interaction:
                     break
                 else:
                     print("Un nombre entre 1 & 11")
-
+                    break
             except ValueError:
-                print("Un nombre entre 1 & 11 lol")
-                break
+                print("Un nombre entre 1 & 11")
+                continue
 
         self.choice_num = choice_num
 
@@ -63,6 +63,6 @@ class Interaction:
 
             except ValueError:
                 print("Un nombre entre 1 & 5")
-                break
+                continue
 
         self.choice_sub_f = choice_sub_f

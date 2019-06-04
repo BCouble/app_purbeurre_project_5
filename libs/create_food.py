@@ -2,7 +2,7 @@ import requests
 import mysql.connector
 
 from libs.constant import *
-from libs.connect_bdd import *
+from libs.connectbdd import *
 
 
 class CreateFood:

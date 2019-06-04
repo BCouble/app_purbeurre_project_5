@@ -2,7 +2,7 @@ import mysql.connector
 from libs.c_mysql import USER, PASSWD, HOST, DATABASE
 
 
-class Connect_bdd:
+class ConnectBdd:
     def __init__(self):
         """ mysql management """
         self.db = mysql.connector.connect(user=USER, password=PASSWD, host=HOST, database=DATABASE)

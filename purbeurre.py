@@ -4,17 +4,17 @@
 Project 5
 App Pur beurre
 """
-from libs.ctrl import ManagementData
+from libs.obj_management import ObjManagement
 from libs.interaction import Interaction
-from libs.select_data import SelectData
+from libs.data_mangement import DataManagement
 
 
 class App:
     def __init__(self):
         self.go = False
         self.choice = Interaction()
-        self.select_data = SelectData()
-        self.ctrl = ManagementData()
+        self.select_data = DataManagement()
+        self.ctrl = ObjManagement()
 
     def start_app(self):
         self.go = True

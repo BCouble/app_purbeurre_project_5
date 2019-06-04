@@ -1,7 +1,7 @@
-from libs.connect_bdd import Connect_bdd
+from libs.connectbdd import ConnectBdd
 
 
-class SelectData:
+class DataManagement:
     def __init__(self):
         """ constructor select """
         self.categories = []
@@ -13,7 +13,7 @@ class SelectData:
     def select_cat(self):
         """ select cat in bdd purbeurre """
         query = "SELECT * FROM categorie"
-        db = Connect_bdd()
+        db = ConnectBdd()
         categorie = db.execute_mysql_sel(query)
         db.destroy_mysql()
         self.categories = categorie
@@ -28,7 +28,7 @@ class SelectData:
         query = "SELECT id, name, description, id_categorie, shops, nutriscore FROM food WHERE id_categorie=%s ORDER " \
                 "BY RAND () " \
                 "LIMIT 10" % id_categorie
-        db = Connect_bdd()
+        db = ConnectBdd()
         food = db.execute_mysql_sel(query)
         db.destroy_mysql()
         self.food = food
@@ -45,7 +45,7 @@ class SelectData:
         letter = "%" + listfood[product][2][:4] + "%"
         id_cat = listfood[product][3]
         query = "SELECT * FROM food WHERE id_categorie = %s AND name LIKE '%s' ORDER BY nutriscore LIMIT 5" % (id_cat, letter)
-        db = Connect_bdd()
+        db = ConnectBdd()
         sub_food = db.execute_mysql_sel(query)
         db.destroy_mysql()
         self.sub_food = sub_food
@@ -59,11 +59,12 @@ class SelectData:
 
     def save_sub_food(self, product, listfood, num_sub_f, listsubfood):
         """ Save substitute """
-        produit_sub = listfood[product][0]
+        sub_product = listfood[product][0]
+        num_sub_f = num_sub_f - 1
         substitute = listsubfood[num_sub_f][0]
-        if not self.check_data_sub_food(produit_sub, substitute):
-            query = "INSERT INTO substitutes (id_produit, id_substitute) VALUES (%s, %s)" % (produit_sub, substitute)
-            db = Connect_bdd()
+        if not self.check_data_sub_food(sub_product, substitute):
+            query = "INSERT INTO substitutes (id_produit, id_substitute) VALUES (%s, %s)" % (sub_product, substitute)
+            db = ConnectBdd()
             db.execute_mysql_ins(query)
             db.destroy_mysql()
         else:
@@ -72,7 +73,7 @@ class SelectData:
     def check_data_sub_food(self, produit_sub, substitute):
         """ Check substitute exist """
         query = "SELECT * FROM substitutes WHERE id_produit=%s AND id_substitute=%s" % (produit_sub, substitute)
-        db = Connect_bdd()
+        db = ConnectBdd()
         check = db.execute_mysql_sel(query)
         db.destroy_mysql()
         return check
@@ -80,7 +81,7 @@ class SelectData:
     def select_fav_food(self):
         """ select fav food """
         query = "SELECT * FROM substitutes LIMIT 5"
-        db = Connect_bdd()
+        db = ConnectBdd()
         select_sub_food = db.execute_mysql_sel(query)
         db.destroy_mysql()
         self.select_sub_food = select_sub_food
@@ -95,7 +96,7 @@ class SelectData:
                     "substitutes.id_produit = food.id WHERE food.id = %s UNION  SELECT food.name, food.nutriscore " \
                     "as food FROM food INNER JOIN substitutes ON substitutes.id_substitute = food.id WHERE food.id = " \
                     "%s " % (id_prod, id_sub)
-            db = Connect_bdd()
+            db = ConnectBdd()
             sel_fav = db.execute_mysql_sel(query)
             db.destroy_mysql()
             sel_ssf.append(sel_fav)
@@ -105,7 +106,7 @@ class SelectData:
         """ display fav food """
         id = 1
         for line in self.ssf:
-            print("Le produit substituté : "+line[0][0], ", nutriscore : "+line[0][1])
+            print("Le produit substitué : "+line[0][0], ", nutriscore : "+line[0][1])
             print("Le substitu : "+line[1][0], ", nutriscore : "+line[1][1])
             print("-------------------------")
             id += 1

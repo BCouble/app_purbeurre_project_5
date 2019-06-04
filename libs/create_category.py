@@ -3,7 +3,7 @@ import requests
 import mysql.connector
 
 from libs.constant import *
-from libs.connect_bdd import *
+from libs.connectbdd import *
 
 
 class CreateCategory:
@@ -28,7 +28,7 @@ class CreateCategory:
         """ insert categories in mysql """
         self.cursor = self.db.cursor()
         for obj in self.categories:
-            query = ("INSERT INTO categorie (name) VALUES (\"%s\")") % (obj)
+            query = "INSERT INTO categorie (name) VALUES (\"%s\")" % obj
             self.cursor.execute(query)
             self.db.commit()
         self.cursor.close()

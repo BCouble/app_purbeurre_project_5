@@ -1,18 +1,18 @@
 # app_purbeurre_project_5
 
-install connect mysql : pip install mysql-connector-python
+pip install -r requirement.txt
 
-## 1 création du Repositories : 
+## 1 creation of the Repositories:
 
 https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
-## 2 création du trello : 
+## 2 creation of the trello:
 
-![Trello off](https://github.com/BCouble/app_purbeurre_project_5/blob/master/image/trello_off.PNG) 
+![Trello off](https://github.com/BCouble/app_purbeurre_project_5/blob/master/image/trello_off_fin.PNG) 
 
-## 3 Création de la base de donnee et du script SQL pour MySQL
+## 3 creating the database and SQL script for MySQL:
 
-### Creation of the database :
+### creation of the database:
 - in the console connect to mysql and type the command :
 	
 	
@@ -32,28 +32,23 @@ https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
 	exemple : SOURCE c:/chemin_absolut/tables.sql;
 	
-	SOURCE C:/Users/admin/Desktop/cour_python/projet_5_PurBeurre/app_purbeurre_project_5/sql/tables_creation.sql;
-
-Problematic:
-
-ERROR 1215 (HY000): Cannot add foreign key constraint
-
-The columns did not have any UNSIGNED which caused an error in the creation of foreign keys (Resolved)
-
-## 4 Création d'une classe en python pour rechercher dans la base Open Food Fact (OFF)
-
-### Etude du fonctionnement de l'API
-
-- Avec l'url : https://fr.openfoodfacts.org/api/v0/cgi/search.pl exemple fichier off.py
-- ou avec : import openfoodfacts exemple fichier pb.py
-- Critère de recherche définit dans le fichier constant.py
+	SOURCE C:/Users/admin/Desktop/cour_python/projet_5_PurBeurre/app_purbeurre_project_5/sql/create_shema.sql;
 
 
-pour importer les données : 
+## 4 creation of a python class to search in the Open Food Fact (OFF) database:
+
+### Study of the API operation:
+
+- with the URL : https://fr.openfoodfacts.org/api/v0/cgi/search.pl exemple fichier off.py
+- with : import openfoodfacts exemple file pb.py
+- the search criteria defined in the constant.py file
+
+
+To import the data: 
     
     insert_data.py 
     
-Pour lancer l'application :
+To launch the application:
 
     pb.py
 

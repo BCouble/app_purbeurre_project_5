@@ -11,12 +11,12 @@ class CreateFood:
     def __init__(self):
         """ Constructor """
         self.db = mysql.connector.connect(user=USER, password=PASSWD, host=HOST, database=DATABASE)
+        self.cursor = self.db.cursor(buffered=True)
         self.categories = []
         self.foods = []
 
     def select_cat(self):
         """ select cat in bdd purbeurre """
-        self.cursor = self.db.cursor(buffered=True)
         query = "SELECT * FROM categorie"
         self.cursor.execute(query)
         rows = self.cursor.fetchall()
@@ -74,10 +74,7 @@ class CreateFood:
         query = ("INSERT INTO food (name, description, id_categorie, shops, date_save, url_page_off, nutriscore)"
                  "VALUES (%(name)s, %(description)s, %(id_categorie)s, %(shops)s, %(date_save)s, %(url_page_off)s, "
                  "%(nutriscore)s)")
-        self.cursor = self.db.cursor()
         self.cursor.execute(query, food)
-        self.db.commit()
-        self.cursor.close()
 
     def check_value(self):
         """ check value for row food """
@@ -88,3 +85,12 @@ class CreateFood:
                     insert = False
             if insert:
                 self.insert_food(food)
+
+    def cursor_close(self):
+        """ close cursor """
+        self.cursor.close()
+        self.db.commit()
+
+    def init_cursor(self):
+        """ start cursor """
+        self.cursor = self.db.cursor(buffered=True)

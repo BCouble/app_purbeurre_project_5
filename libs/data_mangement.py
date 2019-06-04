@@ -43,8 +43,10 @@ class DataManagement:
     def select_sub_food_cat(self, product, listfood):
         """ select sub food """
         letter = "%" + listfood[product][2][:4] + "%"
+        id_food = listfood[product][0]
         id_cat = listfood[product][3]
-        query = "SELECT * FROM food WHERE id_categorie = %s AND name LIKE '%s' ORDER BY nutriscore LIMIT 5" % (id_cat, letter)
+        query = "SELECT * FROM food WHERE id_categorie = %s AND name LIKE '%s' AND id != %s ORDER BY nutriscore " \
+                "LIMIT 5" % (id_cat, letter, id_food)
         db = ConnectBdd()
         sub_food = db.execute_mysql_sel(query)
         db.destroy_mysql()
@@ -100,14 +102,14 @@ class DataManagement:
             sel_fav = db.execute_mysql_sel(query)
             db.destroy_mysql()
             sel_ssf.append(sel_fav)
+            print(sel_ssf)
         self.ssf = sel_ssf
 
     def display_fav_food(self):
         """ display fav food """
         id = 0
-        print(self.ssf)
         for line in self.ssf:
-            print("Le produit substitué : "+line[0][0], ", nutriscore : "+line[0][1])
-            print("Le substitu : "+line[1][0], ", nutriscore : "+line[1][1])
+            print("Le produit substitué : " + line[0][0], ", nutriscore : " + line[0][1])
+            print("Le substitu : " + line[1][0], ", nutriscore : " + line[1][1])
             print("-------------------------")
             id += 1

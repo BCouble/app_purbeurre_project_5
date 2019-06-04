@@ -104,7 +104,8 @@ class DataManagement:
 
     def display_fav_food(self):
         """ display fav food """
-        id = 1
+        id = 0
+        print(self.ssf)
         for line in self.ssf:
             print("Le produit substitué : "+line[0][0], ", nutriscore : "+line[0][1])
             print("Le substitu : "+line[1][0], ", nutriscore : "+line[1][1])

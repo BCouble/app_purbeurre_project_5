@@ -8,7 +8,10 @@ https://github.com/BCouble/app_purbeurre_project_5/blob/master/README.md
 
 ## 2 creation of the trello:
 
+https://trello.com/b/CiLhb76d/projet-pur-beurre-scrum
+
 ![Trello off](https://github.com/BCouble/app_purbeurre_project_5/blob/master/image/trello_off_fin.PNG) 
+
 
 ## 3 creating the database and SQL script for MySQL:
 

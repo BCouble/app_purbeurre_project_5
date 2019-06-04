@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2019-06-04 09:30
+-- Generated: 2019-06-04 15:18
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -39,9 +39,15 @@ DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `purbeurre`.`substitutes` (
   `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_produit` SMALLINT(10) NULL DEFAULT NULL,
+  `id_produit` SMALLINT(6) UNSIGNED NULL DEFAULT NULL,
   `id_substitute` SMALLINT(10) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  INDEX `Food_idx` (`id_produit` ASC) VISIBLE,
+  CONSTRAINT `Food`
+    FOREIGN KEY (`id_produit`)
+    REFERENCES `purbeurre`.`food` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 0
 DEFAULT CHARACTER SET = utf8;

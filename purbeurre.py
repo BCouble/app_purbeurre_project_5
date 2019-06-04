@@ -31,17 +31,20 @@ class App:
                     listfood = self.ctrl.display_food_for_category(num_cat)
                     self.choice.choice_number()
                     num_food = self.choice.choice_num
-                    if 1 <= num_food <= 10:
-                        listsubfood = self.ctrl.display_sub_food_category(num_food, listfood)
-                        if listsubfood == "":
-                            num_food = 0
-                        else:
-                            self.choice.choice_sub_food()
-                            num_sub_f = self.choice.choice_sub_f
-                            if 1 <= num_sub_f <= 5:
-                                self.select_data.save_sub_food(num_food, listfood, num_sub_f, listsubfood)
+                    while num_food != 0:
+                        if 1 <= num_food <= 10:
+                            listsubfood = self.ctrl.display_sub_food_category(num_food, listfood)
+                            if listsubfood == []:
+                                num_food = 0
+                                print("--- Pas de substitut pour ce produit ! ---")
                             else:
-                                print("not save")
+                                self.choice.choice_sub_food()
+                                num_sub_f = self.choice.choice_sub_f
+                                if 1 <= num_sub_f <= 5:
+                                    self.select_data.save_sub_food(num_food, listfood, num_sub_f, listsubfood)
+                                    num_food = 0
+                                else:
+                                    print("not save")
             else:
                 if self.choice.choice_menu == 1:
                     self.ctrl.display_test()

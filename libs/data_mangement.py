@@ -42,6 +42,7 @@ class DataManagement:
 
     def select_sub_food_cat(self, product, listfood):
         """ select sub food """
+        product = product - 1
         letter = "%" + listfood[product][2][:4] + "%"
         id_food = listfood[product][0]
         id_cat = listfood[product][3]
@@ -54,7 +55,7 @@ class DataManagement:
 
     def display_sub_food_cat(self):
         """ display sub food """
-        id = 1
+        id = 0
         for line in self.sub_food:
             print(id, line[1], line[3], line[7])
             id += 1
@@ -102,7 +103,6 @@ class DataManagement:
             sel_fav = db.execute_mysql_sel(query)
             db.destroy_mysql()
             sel_ssf.append(sel_fav)
-            print(sel_ssf)
         self.ssf = sel_ssf
 
     def display_fav_food(self):
@@ -110,6 +110,6 @@ class DataManagement:
         id = 0
         for line in self.ssf:
             print("Le produit substitué : " + line[0][0], ", nutriscore : " + line[0][1])
-            print("Le substitu : " + line[1][0], ", nutriscore : " + line[1][1])
+            print("Le substitut : " + line[1][0], ", nutriscore : " + line[1][1])
             print("-------------------------")
             id += 1

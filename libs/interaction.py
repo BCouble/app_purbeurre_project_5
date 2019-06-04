@@ -33,11 +33,14 @@ class Interaction:
         global choice_num
         choice = 0
         while choice == 0:
+            print("=========================================")
             choice_num = input("Choisissez un chiffre entre (1 & 10) ou 11 pour quitter: ")
             try:
                 choice_num = int(choice_num)
                 if 1 <= choice_num <= 11:
+                    print("-------------------------")
                     print("Produits de la catégorie")
+                    print("-------------------------")
                     break
                 else:
                     print("Un nombre entre 1 & 11")
@@ -57,9 +60,11 @@ class Interaction:
                 choice_sub_f = int(choice_sub_f)
                 if 1 <= choice_sub_f <= 5:
                     print("Votre substitue est enregistré !")
+                    print("-------------------------")
                     break
                 else:
                     print("Un nombre entre 1 & 5")
+                    print("-------------------------")
 
             except ValueError:
                 print("Un nombre entre 1 & 5")

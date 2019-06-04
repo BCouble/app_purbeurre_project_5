@@ -17,7 +17,7 @@ class CreateCategory:
         """ categorie of open food fact """
         categories = []
         select_cat = requests.get(BASE_URL+CATEGORY).json()
-        i = 0
+        i = 50
         while i < NB_CAT:
             categories.append(select_cat['tags'][i]['name'])
             i += 1

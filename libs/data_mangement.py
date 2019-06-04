@@ -55,7 +55,7 @@ class DataManagement:
 
     def display_sub_food_cat(self):
         """ display sub food """
-        id = 0
+        id = 1
         for line in self.sub_food:
             print(id, line[1], line[3], line[7])
             id += 1
@@ -71,7 +71,9 @@ class DataManagement:
             db.execute_mysql_ins(query)
             db.destroy_mysql()
         else:
-            print("Cette substitution existe déjà !")
+            print(""
+                  "Cette substitution existe déjà !"
+                  "")
 
     def check_data_sub_food(self, produit_sub, substitute):
         """ Check substitute exist """
@@ -109,6 +111,7 @@ class DataManagement:
         """ display fav food """
         id = 0
         for line in self.ssf:
+            print("-------------------------")
             print("Le produit substitué : " + line[0][0], ", nutriscore : " + line[0][1])
             print("Le substitut : " + line[1][0], ", nutriscore : " + line[1][1])
             print("-------------------------")

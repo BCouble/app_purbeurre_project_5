@@ -35,9 +35,10 @@ class DataManagement:
 
     def display_food_for_cat(self):
         """ display product off """
+        pipe = "|"
         id = 1
         for line in self.food:
-            print(id, line[1], line[2], line[3])
+            print(id, pipe, line[1], pipe, line[2], pipe, line[3])
             id += 1
 
     def select_sub_food_cat(self, product, listfood):

@@ -34,7 +34,7 @@ class Interaction:
         choice = 0
         while choice == 0:
             print("=========================================")
-            choice_num = input("Choisissez un chiffre entre (1 & 10) ou 11 pour quitter: ")
+            choice_num = input("Choisissez un chiffre entre 1 & 10: ")
             try:
                 choice_num = int(choice_num)
                 if 1 <= choice_num <= 11:

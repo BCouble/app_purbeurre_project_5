@@ -15,11 +15,20 @@ class ConnectBdd:
         self.result = self.cursor.fetchall()
         return self.result
 
+    def execute_mysql_count(self, query):
+        """ mysql select count """
+        result_count = self.cursor.execute(query)
+        return result_count
+
     def execute_mysql_ins(self, query):
         """ mysql insert """
         self.cursor.execute(query)
-        self.db.commit()
+
+    def execute_mysql_ins_data(self, query, data):
+        """ mysql insert """
+        self.cursor.execute(query, data)
 
     def destroy_mysql(self):
         """ mysql destroy """
+        self.db.commit()
         self.cursor.close()

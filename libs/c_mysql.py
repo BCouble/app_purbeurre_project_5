@@ -3,4 +3,4 @@
 HOST = "localhost"
 USER = "purb"
 PASSWD = "purb456!"
-DATABASE = "purbeurre"
+DATABASE = "pur_beurre"

@@ -4,7 +4,7 @@
 Project 5
 App Pur beurre
 """
-from purbeurre import App
+from libs.core import App
 
 
 def main():

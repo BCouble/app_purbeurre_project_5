@@ -12,14 +12,12 @@ BASE_URL = "https://"+GEOLOC+".openfoodfacts.org/"
 # Category
 CATEGORY = "categories.json"
 
-# Food
-CGI = "cgi/search.pl?"
-FOOD = "page_size=50&search_simple=1&action=process&page=2&json=1"
+# Tkinter
+WINDOWS_TITLE = "Pur Beurre"
+BACKGROUND_COLOR = '#2287b0'
+TEXT_COLOR = '#edf5f9'
+ALERT_COLOR = '#d66037'
 
-""" CONFIG CATEGORIE """
 
-NB_CAT = 60
 
-""" CONFIG FOOD """
 
-NB_FOOD = 50

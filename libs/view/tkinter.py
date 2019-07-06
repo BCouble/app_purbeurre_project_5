@@ -17,40 +17,61 @@ class Interface(Frame):
         self.logo.pack()
 
         self.block_pb = Text(self, height=12, width=90, background=BACKGROUND_COLOR, foreground=TEXT_COLOR)
-        self.block_pb.insert(INSERT, self.display_viewport.display_start_app())
-        self.block_pb.pack()
 
         self.message = Label(self, text="Vous n'avez pas cliqué sur le bouton.")
         self.message.pack()
 
         self.var_text = IntVar()
         self.line_text = Entry(self, textvariable=self.var_text)
-        self.line_text.pack(side="left")
 
         self.button_ok = Button(self, text="OK", fg="red",
                                 command=self.click)
-        self.button_ok.pack(side="right")
 
-        self.button_save = Button(self, text="SAVE", fg="red",
+        self.button_save = Button(self, text="Save", fg="red",
                                   command=self.save_substitute)
+
+        self.button_return = Button(self, text="Home", fg="red",
+                                    command=self.viewport_start)
+
+        self.viewport_start()
+
+    def viewport_start(self):
+        """start app"""
+        self.block_pb.delete(0.0, END)
+        self.block_pb.insert(INSERT, self.display_viewport.display_start_app())
+        self.block_pb.pack()
+        self.message["text"] = " {} ".format("Vous n'avez pas cliqué sur le bouton.")
+        self.widget_text()
+        self.button_validate()
+        self.button_save.destroy()
+        self.button_return.destroy()
 
     def viewport_cat(self):
         """viewport"""
         self.block_pb.delete(0.0, END)
         self.block_pb.insert(INSERT, self.display_viewport.display_cat_s0())
         self.block_pb.pack()
+        self.button_return = Button(self, text="Home", fg="red",
+                                    command=self.viewport_start)
+        self.button_return.pack(side="right")
 
     def viewport_favorites(self):
         """viewport"""
         self.block_pb.delete(0.0, END)
         self.block_pb.insert(INSERT, self.display_viewport.display_favorites())
         self.block_pb.pack()
+        self.line_text.destroy()
+        self.button_ok.destroy()
+        self.button_return = Button(self, text="Home", fg="red",
+                                    command=self.viewport_start)
+        self.button_return.pack(side="right")
 
     def viewport_product(self, id_category):
         """viewport"""
         self.block_pb.delete(0.0, END)
         self.block_pb.insert(INSERT, self.display_viewport.display_product(id_category))
         self.block_pb.pack()
+        self.button_return.pack(side="right")
 
     def viewport_choice_product(self, id_food):
         """viewport"""
@@ -58,9 +79,20 @@ class Interface(Frame):
         self.block_pb.insert(INSERT, self.display_viewport.display_substitute(id_food))
         self.block_pb.pack()
         self.button_save.pack(side="right")
+        self.button_return.pack(side="right")
 
-    def button_return(self):
-        """return state one"""
+    def button_validate(self):
+        """button ok"""
+        self.button_ok.destroy()
+        self.button_ok = Button(self, text="OK", fg="red",
+                                command=self.click)
+        self.button_ok.pack(side="right")
+
+    def widget_text(self):
+        """widget text"""
+        self.line_text.destroy()
+        self.line_text = Entry(self, textvariable=self.var_text)
+        self.line_text.pack(side="left")
 
     def click(self):
         """check value send session"""
@@ -71,7 +103,7 @@ class Interface(Frame):
             try:
                 enter_choice = int(enter_choice)
                 if enter_choice == 0:
-                    message = "Catégories de l'Open Food Fact"
+                    message = "Catégories de Pur Beurre"
                     self.viewport_cat()
                     self.button_ok["command"] = self.click_product
                     break
@@ -99,6 +131,8 @@ class Interface(Frame):
                 if 1 <= enter_choice <= 6:
                     message = "Produits de l'Open Food Fact"
                     self.viewport_product(enter_choice)
+                    self.button_save = Button(self, text="Save", fg="red",
+                                              command=self.save_substitute)
                     self.button_ok["command"] = self.click_for_select_product
                     break
                 else:
@@ -139,6 +173,8 @@ class Interface(Frame):
                 enter_choice = int(enter_choice)
                 if 1 <= enter_choice <= 5:
                     message = self.display_viewport.d_save_substitute(enter_choice)
+                    self.button_save.destroy()
+                    self.button_ok.destroy()
                     break
             except ValueError:
                 message = "Choisir un nombre entre 1 & 5"

@@ -51,9 +51,9 @@ class DataManagement:
         self.id_food = self.get_id_food(id_food)
         query = "SELECT idfood, name, dsc, cat_s2, shop, nutriscore FROM food " \
                 "WHERE cat_s2=(SELECT cat_s2 FROM " \
-                "pur_beurre.food WHERE idfood=%s) ORDER " \
+                "pur_beurre.food WHERE idfood=%s) AND idfood != %s ORDER " \
                 "BY RAND () " \
-                "LIMIT 5" % self.id_food
+                "LIMIT 5" % (self.id_food, self.id_food)
         db = ConnectBdd()
         self.substitute = db.execute_mysql_sel(query)
         db.destroy_mysql()

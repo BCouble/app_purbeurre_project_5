@@ -1,12 +1,10 @@
 from libs.view.tkinter import Interface
 from tkinter import *
-from libs.controller.session import Session
 
 
 class App:
     def __init__(self):
         self.go = False
-        self.session = Session()
 
     def start_app(self):
         self.go = True

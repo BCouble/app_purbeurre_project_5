@@ -5,6 +5,8 @@ class DisplayViewPort:
     def __init__(self):
         self.data = " rrttee "
         self.cat = DataManagement()
+        self.nb_product = int()
+        self.nb_substitute = int()
 
     def display_cat_s0(self):
         """recovers the data from pur beurre : s0_category"""
@@ -27,11 +29,12 @@ class DisplayViewPort:
         dt = []
         id = 0
         for line in data:
-            d = (id, line[1], line[0], line[5])
+            d = (id, line[1], line[5], line[0])
             dt.append(d)
             id += 1
-        dt = '\n'.join('{}: {} {}'.format(*line[1]) for line in enumerate(dt, 1))
+        dt = '\n'.join('{}: {} | nutriscore: {}'.format(*line[1]) for line in enumerate(dt, 1))
 
+        self.nb_product = id
         return dt
 
     def display_substitute(self, id_food):
@@ -41,11 +44,12 @@ class DisplayViewPort:
         dt = []
         id = 0
         for line in data:
-            d = (id, line[1], line[0], line[5])
+            d = (id, line[1], line[5], line[0])
             dt.append(d)
             id += 1
-        dt = '\n'.join('{}: {} {}'.format(*line[1]) for line in enumerate(dt, 1))
+        dt = '\n'.join('{}: {} [ nutriscore: {}'.format(*line[1]) for line in enumerate(dt, 1))
 
+        self.nb_substitute = id
         return dt
 
     def d_save_substitute(self, id_substitute):

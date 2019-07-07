@@ -1,5 +1,5 @@
 from tkinter import *
-import logo
+from libs.view import logo
 from libs.constant import BACKGROUND_COLOR, TEXT_COLOR
 from libs.view.view_category import DisplayViewPort
 
@@ -111,8 +111,8 @@ class Interface(Frame):
                     message = "Produits en favoris"
                     self.viewport_favorites()
                     break
-                else:
-                    message = enter_choice
+                if not 1 or not 0:
+                    message = "Choisir 0 ou 1"
                     break
             except ValueError:
                 message = "Choisir 0 ou 1"
@@ -135,7 +135,7 @@ class Interface(Frame):
                                               command=self.save_substitute)
                     self.button_ok["command"] = self.click_for_select_product
                     break
-                else:
+                if enter_choice == 0 or enter_choice > 6:
                     message = "Choisir un nombre entre 1 & 6"
                     break
             except ValueError:
@@ -150,15 +150,19 @@ class Interface(Frame):
         choice = True
         while choice:
             enter_choice = self.line_text.get()
+            nb_prod = self.display_viewport.nb_product - 1
             try:
                 enter_choice = int(enter_choice)
-                if 1 <= enter_choice <= 10:
+                if 0 <= enter_choice <= nb_prod:
                     message = "Substituts de l'Open Food Fact"
                     self.viewport_choice_product(enter_choice)
                     self.button_ok["text"] = "new search"
                     break
+                if enter_choice > nb_prod:
+                    message = " {} ".format("Choisir un nombre entre 0 & " + str(nb_prod))
+                    break
             except ValueError:
-                message = "Choisir un nombre entre 1 & 5"
+                message = " {} ".format("Choisir un nombre entre 0 & " + str(nb_prod))
                 break
 
         self.message["text"] = " {} ".format(message)
@@ -169,15 +173,19 @@ class Interface(Frame):
         choice = True
         while choice:
             enter_choice = self.line_text.get()
+            nb_sub = self.display_viewport.nb_substitute - 1
             try:
                 enter_choice = int(enter_choice)
-                if 1 <= enter_choice <= 5:
+                if 0 <= enter_choice <= nb_sub:
                     message = self.display_viewport.d_save_substitute(enter_choice)
                     self.button_save.destroy()
                     self.button_ok.destroy()
                     break
+                if enter_choice > nb_sub:
+                    message = " {} ".format("Choisir un nombre entre 0 & "+str(nb_sub))
+                    break
             except ValueError:
-                message = "Choisir un nombre entre 1 & 5"
+                message = " {} ".format("Choisir un nombre entre 0 & "+str(nb_sub))
                 break
 
         self.message["text"] = " {} ".format(message)

@@ -43,9 +43,6 @@ class CreateCategory:
                     s2category.append((select_s2_cat['tags'][i]['name'], row[2]))
                 i += 1
 
-        self.all_category.append(self.category)
-        self.all_category.append(self.s1category)
-        self.all_category.append(s2category)
         self.s2category = s2category
 
     def insert_cat(self):

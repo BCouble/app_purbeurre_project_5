@@ -1,5 +1,5 @@
 from libs.controller.connectbdd import ConnectBdd
-from libs.model.message import *
+from libs.model.constant import *
 
 
 class DataManagement:
@@ -71,9 +71,9 @@ class DataManagement:
             db = ConnectBdd()
             db.execute_mysql_ins(query)
             db.destroy_mysql()
-            return save_substitution()
+            return SUB_SAVED
         else:
-            return substitution_exists()
+            return SUB_EXIST
 
     def get_id_substitute(self, id_substitute):
         """id food in self.product"""

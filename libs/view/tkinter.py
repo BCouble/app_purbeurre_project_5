@@ -5,13 +5,12 @@ from libs.model.viewport import DisplayViewPort
 
 
 class Interface(Frame):
-    def __init__(self, fenetre, **kwargs):
-        Frame.__init__(self, fenetre, background=BACKGROUND_COLOR, width=650, height=500, **kwargs)
+    def __init__(self, window, **kwargs):
+        Frame.__init__(self, window, background=BACKGROUND_COLOR, width=650, height=500, **kwargs)
         self.pack(fill=BOTH, expand=1)
         self.choice = 999
         self.display_viewport = DisplayViewPort()
 
-        # Création de nos widgets
         self.logo = Text(self, height=9, width=90, background=BACKGROUND_COLOR, foreground=TEXT_COLOR)
         self.logo.insert(INSERT, logo.create_logo())
         self.logo.pack()

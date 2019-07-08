@@ -1,5 +1,5 @@
-from libs.connectbdd import ConnectBdd
-from libs.view.message import *
+from libs.controller.connectbdd import ConnectBdd
+from libs.model.message import *
 
 
 class DataManagement:

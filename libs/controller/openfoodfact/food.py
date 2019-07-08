@@ -1,5 +1,5 @@
 import openfoodfacts
-from libs.connectbdd import ConnectBdd
+from libs.controller.connectbdd import ConnectBdd
 from libs.controller.purbeurre.data_management import DataManagement
 
 

@@ -1,7 +1,7 @@
 from tkinter import *
-from libs.view import logo
-from libs.constant import BACKGROUND_COLOR, TEXT_COLOR
-from libs.view.view_category import DisplayViewPort
+from libs.model import logo
+from libs.model.constant import BACKGROUND_COLOR, TEXT_COLOR
+from libs.model.viewport import DisplayViewPort
 
 
 class Interface(Frame):

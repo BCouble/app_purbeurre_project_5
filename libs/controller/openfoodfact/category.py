@@ -1,4 +1,4 @@
-from libs.connectbdd import ConnectBdd
+from libs.controller.connectbdd import ConnectBdd
 from libs.controller.openfoodfact.constant import *
 import requests
 
@@ -23,7 +23,7 @@ class CreateCategory:
             while i < NB_S_CAT:
                 s1_cat = select_s1_cat['tags'][i]['name']
                 # 20 to limit the number of subcategories
-                if obj in s1_cat and s1_cat != obj and len(s1_cat) < 20:
+                if obj in s1_cat and s1_cat != obj and len(s1_cat) < LEN_CATEGORY:
                     s1category.append((s1_cat, id_s0, id))
                     id += 1
                 i += 1
@@ -47,16 +47,6 @@ class CreateCategory:
         self.all_category.append(self.s1category)
         self.all_category.append(s2category)
         self.s2category = s2category
-
-    def insert_all_cat(self):
-        """insert all category"""
-        print(self.category)
-        print("--------------")
-        print(self.s1category)
-        print("--------------")
-        print(self.s2category)
-        print("--------------")
-        print(self.all_category)
 
     def insert_cat(self):
         """insert category in mysql"""

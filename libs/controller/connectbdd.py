@@ -1,5 +1,5 @@
 import mysql.connector
-from libs.c_mysql import USER, PASSWD, HOST, DATABASE
+from libs.controller.c_mysql import USER, PASSWD, HOST, DATABASE
 
 
 class ConnectBdd:

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="509747f3-8b19-4486-9811-f2a1d4b4ab5b" name="Default Changelist" comment="Refactor + translate readme.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/controller/openfoodfact/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/controller/openfoodfact/category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/controller/openfoodfact/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/controller/openfoodfact/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/controller/purbeurre/data_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/controller/purbeurre/data_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/model/viewport.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/model/viewport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/create_shema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/create_shema.sql" afterDir="false" />
-    </list>
+    <list default="true" id="509747f3-8b19-4486-9811-f2a1d4b4ab5b" name="Default Changelist" comment="Refactor + translate readme.md" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,8 +107,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-86">
-                <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <first_editor relative-caret-position="272">
+                <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -376,7 +368,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -561,8 +552,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-86">
-            <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <first_editor relative-caret-position="272">
+            <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>

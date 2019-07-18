@@ -13,6 +13,8 @@ class DataManagement:
         self.all_category = []
         self.favorites = []
         self.id_food = int()
+        self.nutriscore = str()
+        self.list_nutriscore = []
 
     def select_category_s0(self):
         """select category"""
@@ -49,11 +51,14 @@ class DataManagement:
     def select_substitute(self, id_food):
         """ select product in bdd purbeurre """
         self.id_food = self.get_id_food(id_food)
+        self.nutriscore = self.get_nutriscore(id_food)
+        list_nutriscore = self.create_list_nutriscore(self.nutriscore)
+        list_nutriscore = tuple(list_nutriscore)
         query = "SELECT idfood, name, dsc, cat_s2, shop, nutriscore FROM food " \
                 "WHERE cat_s2=(SELECT cat_s2 FROM " \
-                "pur_beurre.food WHERE idfood=%s) AND idfood != %s ORDER " \
-                "BY RAND () " \
-                "LIMIT 5" % (self.id_food, self.id_food)
+                "pur_beurre.food WHERE idfood=%s) AND idfood != %s AND nutriscore IN %s" \
+                "ORDER BY nutriscore " \
+                "LIMIT 5" % (self.id_food, self.id_food, list_nutriscore)
         db = ConnectBdd()
         self.substitute = db.execute_mysql_sel(query)
         db.destroy_mysql()
@@ -61,6 +66,23 @@ class DataManagement:
     def get_id_food(self, id_food):
         """id food in self.product"""
         return self.product[id_food][0]
+
+    def get_nutriscore(self, id_food):
+        """nutriscore in self.product"""
+        return self.product[id_food][5]
+
+    def create_list_nutriscore(self, l_nutriscore):
+        """create list nutriscore"""
+        value_nutriscore = ('a', 'b', 'c', 'd', 'e', 'f')
+        list_nutriscore = []
+        for value in value_nutriscore:
+            if value != l_nutriscore:
+                list_nutriscore.append(value)
+            if value == l_nutriscore:
+                list_nutriscore.append(value)
+                break
+
+        return list_nutriscore
 
     def save_substitute(self, id_substitute):
         """save substitute"""

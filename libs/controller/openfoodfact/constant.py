@@ -25,4 +25,8 @@ FOOD = "page_size=50&search_simple=1&action=process&page=2&json=1"
 
 """ CONFIG CATEGORIE """
 
+NB_S_CAT = 50
+
+""" CONFIG CATEGORIE """
+
 LEN_CATEGORY = 20

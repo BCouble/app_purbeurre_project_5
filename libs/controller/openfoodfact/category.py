@@ -6,7 +6,7 @@ import requests
 class CreateCategory:
     """select, import data off"""
     def __init__(self):
-        self.category = [('Viandes', 1), ('Gâteaux', 2), ('Yaourts', 3), ('Poulets', 4), ('Jambons', 5), ('Graines', 6)]
+        self.category = [('Viandes', 1), ('Gâteaux', 2), ('Yaourts', 3), ('Poulets', 4), ('Jambons', 5)]
         self.all_category = []
         self.s1category = []
         self.s2category = []

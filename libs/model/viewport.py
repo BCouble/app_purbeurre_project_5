@@ -45,7 +45,7 @@ class DisplayViewPort:
             id += 1
 
         self.nb_substitute = id
-        return '\n'.join('{}: {} [ nutriscore: {}'.format(*line[1]) for line in enumerate(text, 1))
+        return '\n'.join('{}: {} | nutriscore: {}'.format(*line[1]) for line in enumerate(text, 1))
 
     def d_save_substitute(self, id_substitute):
         """rec id_food & id_substitute"""

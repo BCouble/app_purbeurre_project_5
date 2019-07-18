@@ -1,6 +1,6 @@
 # app_purbeurre_project_5
 
-pip install -r requirement.txt
+pip install -r requirements.txt
 
 ## 1 creation of the Repositories:
 

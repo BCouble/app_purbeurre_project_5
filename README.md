@@ -21,7 +21,7 @@ https://trello.com/b/CiLhb76d/projet-pur-beurre-scrum
 	
 	SOURCE C:/Users/admin/Desktop/cour_python/projet_5_PurBeurre/app_purbeurre_project_5/sql/create_shema.sql;
 	
-### Creating Database and Tables :
+### Creating User :
 
 	
 	
